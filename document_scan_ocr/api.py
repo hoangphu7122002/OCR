@@ -31,7 +31,7 @@ llama_processor = AutoProcessor.from_pretrained(model_id)
 
 # OpenAI config
 GPT_MODEL = 'chatgpt-4o-latest'
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = ''
 
 def convert_pdf_to_images(pdf_path) -> list:
     output_folder = 'images'

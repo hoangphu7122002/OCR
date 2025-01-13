@@ -17,6 +17,7 @@ app = FastAPI()
 # Cấu hình CUDA
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 # Khởi tạo model Llama
@@ -30,7 +31,7 @@ llama_processor = AutoProcessor.from_pretrained(model_id)
 
 # OpenAI config
 GPT_MODEL = 'chatgpt-4o-latest'
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = ''
 
 def convert_pdf_to_images(pdf_path) -> list:
     output_folder = 'images'
